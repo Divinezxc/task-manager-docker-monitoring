@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>SPO Task Manager</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-container">
+    <h1>📋 СПО: Панель управления задачами</h1>
+    <div class="input-group">
+      <input type="text" id="taskInput" placeholder="Введите новую задачу...">
+      <button onclick="addTask()">Добавить</button>
+    </div>
+    <ul id="taskList"></ul>
+  </div>
+
+  <script>
+    function loadTasks() {
+      const tasks = JSON.parse(localStorage.getItem('spo_tasks') || '[]');
+      const list = document.getElementById('taskList');
+      list.innerHTML = '';
+      tasks.forEach((task, index) => {
+        const li = document.createElement('li');
+        li.innerHTML = `
+          <span contenteditable="true" onblur="editTask(${index}, this.innerText)">${task}</span>
+          <button class="delete-btn" onclick="deleteTask(${index})">✕</button>
+        `;
+        list.appendChild(li);
+      });
+      // Отправляем фоновый запрос для фиксации метрики посещения/взаимодействия
+      fetch('/api/ping', { method: 'POST' }).catch(() => {});
+    }
+
+    function addTask() {
+      const input = document.getElementById('taskInput');
+      if (!input.value.trim()) return;
+      const tasks = JSON.parse(localStorage.getItem('spo_tasks') || '[]');
+      tasks.push(input.value.trim());
+      localStorage.setItem('spo_tasks', JSON.stringify(tasks));
+      input.value = '';
+      loadTasks();
+    }
+
+    function editTask(index, newText) {
+      const tasks = JSON.parse(localStorage.getItem('spo_tasks') || '[]');
+      tasks[index] = newText.trim();
+      localStorage.setItem('spo_tasks', JSON.stringify(tasks));
+    }
+
+    function deleteTask(index) {
+      const tasks = JSON.parse(localStorage.getItem('spo_tasks') || '[]');
+      tasks.splice(index, 1);
+      localStorage.setItem('spo_tasks', JSON.stringify(tasks));
+      loadTasks();
+    }
+
+    loadTasks();
+  </script>
+</body>
+</html>
