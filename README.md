@@ -1,4 +1,4 @@
-# 📋 СПО: Панель управления задачами & DevOps-инфраструктура
+# Панель управления задачами & DevOps-инфраструктура
 
 [![Build and Push Docker Image](https://github.com/Divinezxc/task-manager-docker-monitoring/actions/workflows/deploy.yml/badge.svg)](https://github.com/Divinezxc/task-manager-docker-monitoring/actions)
 [![Docker Image](https://img.shields.io/badge/GHCR-Docker%20Image-blue)](https://github.com/Divinezxc/task-manager-docker-monitoring/pkgs/container/task-manager-docker-monitoring%2Fweb-app)
@@ -7,27 +7,27 @@
 
 ---
 
-## 🚀 Основные возможности
+## Основные возможности
 
-### 🌐 Веб-приложение
+### Веб-приложение
 - **Интерфейс:** Тёмная стилизованная панель управления задачами с адаптивным дизайном.
 - **Функционал:** Добавление, фильтрация (Все / Активные / Выполненные), отметка выполнения и удаление задач.
 - **Хранение данных:** Сохранение состояния задач в `localStorage` браузера.
 - [![Открыть сайт](https://img.shields.io/badge/🔗_Открыть_Task_Manager-GitHub_Pages-2ea44f?style=for-the-badge)](https://Divinezxc.github.io/task-manager-docker-monitoring/)
 
-### 🛠 Инфраструктура и Контейнеризация
+### Инфраструктура и Контейнеризация
 - **Веб-сервер:** Nginx Alpine (`Dockerfile`).
 - **Оркестрация:** `docker-compose.yml` для многоконтейнерной сборки (Приложение + Prometheus + cAdvisor).
 - **Сбор метрик (Prometheus):** Конфигурация `prometheus.yml` для отслеживания состояния сервисов и метрик.
 - **Мониторинг ресурсов (cAdvisor):** Контроль потребления CPU, RAM и сетевой активности контейнеров.
 
-### 🔄 CI/CD Пайплайн (.github/workflows/deploy.yml)
+### CI/CD Пайплайн (.github/workflows/deploy.yml)
 1. **Автоматическая сборка:** При каждом коммите в ветку `main` запускается рабочий процесс GitHub Actions.
 2. **Публикация артефакта:** Docker-образ собирается и сохраняется в реестре **GitHub Container Registry (GHCR)**.
 
 ---
 
-## 🛠 Структура проекта
+## Структура проекта
 
 ```text
 ├── .github/
@@ -40,7 +40,7 @@
 ├── prometheus.yml          # Конфигурация сбора метрик Prometheus
 └── README.md               # Документация проекта
 ```
-### 💻 Локальный запуск (Инструкция для проверки)
+### Локальный запуск (Инструкция для проверки)
 Для запуска всего стека из исходных файлов выполните следующие команды в терминале:
 
 ```
