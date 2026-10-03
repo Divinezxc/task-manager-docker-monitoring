@@ -1,7 +1,7 @@
 # Сборка и подготовка артефактов
 FROM alpine:latest AS builder
 WORKDIR /app
-COPY src/ .
+COPY index.html .
 # Сборка
 RUN mkdir -p /app/dist && cp -r * /app/dist/
 
