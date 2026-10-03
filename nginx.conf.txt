@@ -1,0 +1,28 @@
+server {
+    listen 80;
+    server_name localhost;
+
+    location / {
+        root /usr/share/nginx/html;
+        index index.html;
+    }
+
+    # Health check для Docker и мониторинга
+    location /health {
+        access_log off;
+        add_header Content-Type application/json;
+        return 200 '{"status":"healthy","app":"spo-html-app"}';
+    }
+
+    # Метрики сервера для Prometheus (через nginx-exporter)
+    location /metrics_status {
+        stub_status on;
+        access_log off;
+    }
+
+    # Имитация API для подсчета посещений/кликов
+    location /api/ping {
+        access_log on;
+        return 200 '{"status":"ok"}';
+    }
+}
