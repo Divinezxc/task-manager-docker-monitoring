@@ -1,7 +1,7 @@
 # 📋 СПО: Панель управления задачами & DevOps-инфраструктура
 
-[![Build and Push Docker Image](https://github.com/Divinezxc/-1-/actions/workflows/deploy.yml/badge.svg)](https://github.com/Divinezxc/-1-/actions)
-[![Docker Image](https://img.shields.io/badge/GHCR-Docker%20Image-blue)](https://github.com/Divinezxc/-1-/pkgs/container/-1-%2Fweb-app)
+[![Build and Push Docker Image](https://github.com/Divinezxc/task-manager-docker-monitoring/actions/workflows/deploy.yml/badge.svg)](https://github.com/Divinezxc/task-manager-docker-monitoring/actions)
+[![Docker Image](https://img.shields.io/badge/GHCR-Docker%20Image-blue)](https://github.com/Divinezxc/task-manager-docker-monitoring/pkgs/container/task-manager-docker-monitoring%2Fweb-app)
 
 Учебный проект по дисциплине **Системное программное обеспечение (СПО)**. Представляет собой веб-приложение для управления задачами с настроенным CI/CD-пайплайном, контейнеризацией на базе Docker и интеграцией мониторинга ресурсов и сервисов.
 
@@ -13,7 +13,7 @@
 - **Интерфейс:** Тёмная стилизованная панель управления задачами с адаптивным дизайном.
 - **Функционал:** Добавление, фильтрация (Все / Активные / Выполненные), отметка выполнения и удаление задач.
 - **Хранение данных:** Сохранение состояния задач в `localStorage` браузера.
-- **Демо-версия (GitHub Pages):** [https://Divinezxc.github.io/-1-/](https://Divinezxc.github.io/-1-/)
+- **Демо-версия (GitHub Pages):** [https://Divinezxc.github.io/task-manager-docker-monitoring/](https://Divinezxc.github.io/task-manager-docker-monitoring/)
 
 ### 🛠 Инфраструктура и Контейнеризация
 - **Веб-сервер:** Nginx Alpine (`Dockerfile`).
@@ -33,9 +33,22 @@
 ├── .github/
 │   └── workflows/
 │       └── deploy.yml       # Сценарий CI/CD для сборки и публикации Docker-образа
-├── Dockerfile              # Инструкция сборки образa Nginx
+├── Dockerfile              # Инструкция сборки образа Nginx
 ├── docker-compose.yml      # Файл развертывания полного мультиконтейнерного стека
 ├── index.html              # Исходный код веб-приложения (HTML + CSS + JS)
 ├── nginx.conf              # Веб-конфигурация сервера Nginx
 ├── prometheus.yml          # Конфигурация сбора метрик Prometheus
 └── README.md               # Документация проекта
+```
+### 💻 Локальный запуск (Инструкция для проверки)
+Для запуска всего стека из исходных файлов выполните следующие команды в терминале:
+
+```
+# 1. Клонирование репозитория
+git clone [https://github.com/Divinezxc/task-manager-docker-monitoring.git](https://github.com/Divinezxc/task-manager-docker-monitoring.git)
+
+# 2. Переход в директорию проекта
+cd task-manager-docker-monitoring
+
+# 3. Запуск мультиконтейнерного стека
+docker compose up -d --build```
