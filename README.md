@@ -51,4 +51,5 @@ git clone [https://github.com/Divinezxc/task-manager-docker-monitoring.git](http
 cd task-manager-docker-monitoring
 
 # 3. Запуск мультиконтейнерного стека
-docker compose up -d --build```
+docker compose up -d --build
+```
