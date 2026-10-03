@@ -13,7 +13,6 @@
 - **Интерфейс:** Тёмная стилизованная панель управления задачами с адаптивным дизайном.
 - **Функционал:** Добавление, фильтрация (Все / Активные / Выполненные), отметка выполнения и удаление задач.
 - **Хранение данных:** Сохранение состояния задач в `localStorage` браузера.
-- **Демо-версия (GitHub Pages):** [https://Divinezxc.github.io/task-manager-docker-monitoring/](https://Divinezxc.github.io/task-manager-docker-monitoring/)
 - [![Открыть сайт](https://img.shields.io/badge/🔗_Открыть_Task_Manager-GitHub_Pages-2ea44f?style=for-the-badge)](https://Divinezxc.github.io/task-manager-docker-monitoring/)
 
 ### 🛠 Инфраструктура и Контейнеризация
